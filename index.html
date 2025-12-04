@@ -2,429 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Miran Ali - Digital Card</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Profile - Setup Required</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 0;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
         }
-
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background: #fff;
-            min-height: 100vh;
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 400px;
+            text-align: center;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, #7CB9A8 0%, #5B9A8B 50%, #3D7A6D 100%);
-            padding: 40px 20px 60px;
-            text-align: center;
-            position: relative;
-        }
-
-        .profile-image {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
-
-        .name {
-            color: #fff;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .title {
-            color: rgba(255,255,255,0.9);
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .company {
-            color: rgba(255,255,255,0.8);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        /* Quick Actions */
-        .quick-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .quick-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #5B9A8B;
-            font-size: 20px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .quick-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        /* Content Section */
-        .content {
+        h1 { color: #5B9A8B; margin-bottom: 20px; }
+        p { color: #666; line-height: 1.6; }
+        .steps {
+            text-align: left;
+            background: #f5f5f5;
             padding: 20px;
-            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
         }
-
-        .contact-item {
-            background: #fff;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .contact-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .contact-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 18px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 2px;
-        }
-
-        .contact-value {
-            font-size: 15px;
+        .steps li {
+            margin: 10px 0;
             color: #333;
-            font-weight: 500;
-            word-break: break-all;
         }
-
-        .map-btn {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 6px 16px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            font-size: 13px;
-            color: #666;
-            text-decoration: none;
-        }
-
-        /* Add Contact Button */
-        .add-contact-section {
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-            position: sticky;
-            bottom: 0;
-        }
-
-        .add-contact-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .add-contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
-        }
-
-        /* Section Title */
-        .section-title {
-            font-size: 12px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 20px 0 10px;
-            padding-left: 5px;
-        }
-
-        /* Responsive */
-        @media (min-width: 481px) {
-            body {
-                padding: 20px;
-                align-items: center;
-            }
-            .container {
-                min-height: auto;
-                border-radius: 20px;
-                overflow: hidden;
-            }
-        }
+        .icon { font-size: 60px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <!-- CHANGE: Add your photo URL here -->
-            <img src="https://i.ibb.co/placeholder/profile.jpg" alt="Profile" class="profile-image" id="profileImage">
-
-            <!-- CHANGE: Your name -->
-            <h1 class="name">Miran Ali</h1>
-
-            <!-- CHANGE: Your job title -->
-            <p class="title">Managing Director</p>
-
-            <!-- CHANGE: Your company -->
-            <p class="company">Bitopi Group</p>
-
-            <!-- Quick Action Buttons -->
-            <div class="quick-actions">
-                <!-- CHANGE: Your phone number -->
-                <a href="tel:+8801711565070" class="quick-btn">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <!-- CHANGE: Your email -->
-                <a href="mailto:miran@bitopibd.com" class="quick-btn">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <!-- CHANGE: Your location for map -->
-                <a href="https://maps.google.com/?q=822/3, shewrapara, Mirpur, Dhaka, 1216, Bangladesh" target="_blank" class="quick-btn">
-                    <i class="fas fa-location-dot"></i>
-                </a>
-            </div>
+    <div class="card">
+        <div class="icon">📱</div>
+        <h1>Setup Your Profile</h1>
+        <p>This is a placeholder page. To show your profile:</p>
+        <div class="steps">
+            <ol>
+                <li>Open the <strong>QR Code App</strong></li>
+                <li>Enter your information</li>
+                <li>Click <strong>"Export HTML"</strong></li>
+                <li>Replace this file with exported <strong>index.html</strong></li>
+            </ol>
         </div>
-
-        <!-- Content -->
-        <div class="content">
-            <!-- Phone Numbers -->
-            <div class="section-title">Phone</div>
-
-            <!-- CHANGE: Add your phone numbers -->
-            <a href="tel:+447479339435" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">M</div>
-                    <div class="contact-value">+44 7479 339435</div>
-                </div>
-            </a>
-
-            <a href="tel:+85263312909" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">M</div>
-                    <div class="contact-value">+852 6331 2909</div>
-                </div>
-            </a>
-
-            <a href="tel:+8801711565070" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">M</div>
-                    <div class="contact-value">+880 1711565070</div>
-                </div>
-            </a>
-
-            <!-- Emails -->
-            <div class="section-title">Email</div>
-
-            <!-- CHANGE: Add your emails -->
-            <a href="mailto:miran@bitopibd.com" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Mail</div>
-                    <div class="contact-value">miran@bitopibd.com</div>
-                </div>
-            </a>
-
-            <a href="mailto:miran@silkroute.com.hk" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Mail</div>
-                    <div class="contact-value">miran@silkroute.com.hk</div>
-                </div>
-            </a>
-
-            <!-- Websites -->
-            <div class="section-title">Website</div>
-
-            <!-- CHANGE: Add your websites -->
-            <a href="https://www.bitopibd.com" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Website</div>
-                    <div class="contact-value">www.bitopibd.com</div>
-                </div>
-            </a>
-
-            <a href="https://silkroute.com.hk" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">SRS Website</div>
-                    <div class="contact-value">silkroute.com.hk</div>
-                </div>
-            </a>
-
-            <!-- Location Links -->
-            <div class="section-title">Locations</div>
-
-            <a href="https://maps.google.com/?q=Misami" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Misami Location</div>
-                    <div class="contact-value">View on Map</div>
-                </div>
-            </a>
-
-            <a href="https://maps.google.com/?q=Tarasima" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Tarasima Location</div>
-                    <div class="contact-value">View on Map</div>
-                </div>
-            </a>
-
-            <a href="https://maps.google.com/?q=Remi" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Remi Location</div>
-                    <div class="contact-value">View on Map</div>
-                </div>
-            </a>
-
-            <a href="https://maps.google.com/?q=Baridhi" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Baridhi Location</div>
-                    <div class="contact-value">View on Map</div>
-                </div>
-            </a>
-
-            <!-- Address -->
-            <div class="section-title">Address</div>
-
-            <!-- CHANGE: Your address -->
-            <a href="https://maps.google.com/?q=822/3, shewrapara, Mirpur, Dhaka, 1216, Bangladesh" target="_blank" class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-location-dot"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">822/3, shewrapara, Mirpur, Dhaka, 1216, Bangladesh</div>
-                    <span class="map-btn">Show on Map</span>
-                </div>
-            </a>
-
-            <!-- Company -->
-            <div class="section-title">Company</div>
-
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-building"></i>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label">Bitopi Group</div>
-                    <div class="contact-value">Managing Director</div>
-                </div>
-            </div>
-
-            <!-- Spacer for bottom button -->
-            <div style="height: 80px;"></div>
-        </div>
-
-        <!-- Add Contact Button -->
-        <div class="add-contact-section">
-            <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AMiran%20Ali%0AN%3AAli%3BMiran%3B%3B%3B%0ATITLE%3AManaging%20Director%0AORG%3ABitopi%20Group%0ATEL%3BTYPE%3DCELL%3A%2B447479339435%0ATEL%3BTYPE%3DCELL%3A%2B85263312909%0ATEL%3BTYPE%3DCELL%3A%2B8801711565070%0AEMAIL%3Amiran%40bitopibd.com%0AEMAIL%3Amiran%40silkroute.com.hk%0AURL%3Ahttps%3A%2F%2Fwww.bitopibd.com%0AURL%3Ahttps%3A%2Fsilkroute.com.hk%0AADR%3B%3B%3B822%2F3%2C%20shewrapara%2C%20Mirpur%2C%20Dhaka%2C%201216%2C%20Bangladesh%3B%3B%3B%3B%0AEND%3AVCARD" download="Miran_Ali.vcf" class="add-contact-btn">
-                <i class="fas fa-user-plus"></i>
-                Add Contact
-            </a>
-        </div>
+        <p>Your profile will appear here after upload!</p>
     </div>
-
-    <script>
-        // Handle image loading error - show placeholder
-        document.getElementById('profileImage').onerror = function() {
-            this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzAiIGhlaWdodD0iMTMwIiB2aWV3Qm94PSIwIDAgMTMwIDEzMCI+PGNpcmNsZSBjeD0iNjUiIGN5PSI2NSIgcj0iNjUiIGZpbGw9IiNkZGQiLz48Y2lyY2xlIGN4PSI2NSIgY3k9IjUwIiByPSIyNSIgZmlsbD0iIzk5OSIvPjxwYXRoIGQ9Ik0yNSAxMTVjMC0yMiAxOC00MCA0MC00MGgyMGMyMiAwIDQwIDE4IDQwIDQwIiBmaWxsPSIjOTk5Ii8+PC9zdmc+';
-        };
-    </script>
 </body>
 </html>
